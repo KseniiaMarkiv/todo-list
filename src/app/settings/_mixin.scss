@@ -1,0 +1,6 @@
+@mixin blur-effect($amount) {
+  backdrop-filter: blur($amount);
+  -webkit-backdrop-filter: blur($amount);
+  -moz-backdrop-filter: blur($amount);
+  -o-backdrop-filter: blur($amount);
+}

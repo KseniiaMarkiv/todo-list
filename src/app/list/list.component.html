@@ -2,7 +2,7 @@
   <div class="row ms-5 mb-5 ps-5">
 
     <div class="col-5 align-self-center pt-5 mt-5">
-      <div class="text-decoration-underline fs-3 top-items text-center">
+      <div class="text-decoration-underline fs-3 top-items text-center" *ngIf="allItems.length > 0">
         {{allItems.length }} items left
       </div>
   
@@ -14,7 +14,7 @@
         <mat-card-content>
           <section class="list-section-two">
             <div class="container d-grid">
-              <div class="row d-grid todo-item" *ngFor="let todo of allItems">
+              <div class="row d-grid todo-item" *ngFor="let todo of allItems.slice(0, 4)"> <!-- show only 4 items -->
                 <span class="col p-0 input-items">
                   <mat-checkbox color="accent" class="example-margin font-monospace">
                     <span class="list-items-left">{{todo.todoName}}</span>
@@ -23,6 +23,18 @@
               </div>
             </div>
           </section>
+
+          <section class="list-section-new position-relative">
+            <button class="new-todo position-absolute" mat-raised-button (click)="toggleInputField()">+ New Task</button>
+            <div class="alert-wrapper position-absolute" *ngIf="showInputField">
+              <div class="alert alert-dismissible fade show alert-new-item pe-3" role="alert">
+                <input class="new-todo-name" [(ngModel)]="newTodoName" placeholder="Enter new todo name">
+                <button class="add-todo" mat-raised-button color="primary" (click)="addTodo(newTodoName)">Add Task</button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="toggleInputField()"></button>
+              </div>
+            </div>
+          </section>
+          
         </mat-card-content>
       </mat-card>
     </div>
@@ -58,3 +70,8 @@
 
   </div>
 </section>
+
+<div class="alert alert-danger d-flex align-items-center alert-dismissible fade show message-container" role="alert" *ngIf="showMessage">
+  <strong>Holy guacamole! </strong> &nbsp;{{ messageText }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeMessage()"></button>
+</div>

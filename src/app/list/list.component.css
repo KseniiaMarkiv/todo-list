@@ -1,0 +1,229 @@
+.center-section {
+  height: 80svh;
+}
+.center-section div.row {
+  height: 100%;
+}
+.center-section div.row div.col-5 .top-items {
+  width: 400px;
+}
+.center-section div.row div.col-5 .top-items:nth-child(2) {
+  background-color: #7FFFD4;
+  border-radius: 4px;
+}
+.center-section div.row div.col-5 .top-items:nth-child(2) p {
+  padding: 10px;
+}
+.center-section div.row div.col-5 mat-card {
+  width: 400px;
+  height: 324px;
+}
+@media (max-width: 1900px) {
+  .center-section div.row div.col-5 mat-card .todo-item {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .center-section div.row div.col-5 mat-card .todo-item {
+    margin-left: 5px;
+  }
+}
+@media (max-width: 991px) {
+  .center-section div.row div.col-5 mat-card .todo-item {
+    margin-left: 0px;
+  }
+}
+.center-section div.row div.col-5 mat-card .list-section-two {
+  padding: 48px;
+}
+@media (max-width: 991px) {
+  .center-section div.row div.col-5 mat-card .list-section-two {
+    padding: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .center-section div.row div.col-5 mat-card .list-section-two {
+    padding: 0px;
+  }
+}
+.center-section div.row div.col-5 mat-card span.list-items-left {
+  font-family: "Inder", sans-serif;
+}
+.center-section div.row div.col-5 mat-card input.new-todo-name {
+  border: none;
+  border-bottom: 1px solid grey;
+}
+.center-section div.row div.col-5 .new-todo {
+  border-radius: 40px;
+  background-color: #7FFFD4;
+  color: #343434;
+  font-size: 13px;
+  padding: 0 25px;
+  right: 50%;
+}
+.center-section div.row div.col-5 .alert-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -40%;
+  left: 20%;
+}
+.center-section div.row div.col-5 .alert-wrapper .alert-new-item {
+  background-color: rgba(245, 245, 245, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
+  border-radius: 4px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 10px 1px rgba(52, 52, 52, 0.4705882353);
+}
+.center-section div.row div.col-5 .alert-wrapper .alert-new-item .add-todo {
+  background-color: #7FFFD4;
+  color: #343434;
+}
+.center-section div.row div.col-5 .alert-wrapper .alert-new-item .btn-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.center-section div.row div.col-5 .alert-wrapper .alert-new-item input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.center-section div.row div.col-5 .alert-wrapper .alert-new-item input::-moz-placeholder {
+  color: gray;
+}
+.center-section div.row div.col-5 .alert-wrapper .alert-new-item input::placeholder {
+  color: gray;
+}
+.center-section div.row div.col-7 section.chips-section {
+  margin-left: 70px;
+}
+.center-section div.row div.col-7 section.chips-section mat-chip-option {
+  width: 100px;
+  height: 25px;
+}
+.center-section div.row div.col-7 section.list-section div.sheet-list, .center-section div.row div.col-7 section.list-section div.sheet {
+  width: 100%;
+}
+.center-section div.row div.col-7 section.list-section div.sheet-list {
+  top: 88px;
+  left: 90px;
+}
+.center-section div.row div.col-7 section.list-section div.sheet-list dl.lists dd.items {
+  margin: 0;
+  height: 25px;
+}
+.center-section div.row div.col-7 section.list-section div.sheet-list dl.lists dd.items span.list-items-right {
+  font-family: "Handlee", cursive;
+  color: #000000;
+  font-size: 16px;
+  top: 2px;
+}
+.center-section div.row div.col-7 section.list-section div.sheet {
+  height: auto;
+}
+
+.message-container {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  font-size: x-large;
+  letter-spacing: 2px;
+  background: rgba(127, 255, 212, 0.4431372549);
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  color: #343434;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
+}
+
+.alert-dismissible .btn-close {
+  top: 20px;
+  right: 20px;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
+  border-radius: 50%;
+  background-color: #7FFFD4 !important;
+  border: 2px solid #DBFFF3 !important;
+}
+
+.mat-mdc-checkbox-checked .mdc-form-field .mdc-label .list-items-left,
+.mat-mdc-checkbox-checked .mdc-form-field .mdc-label .list-items-right {
+  text-decoration: line-through;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
+  border-radius: 50% !important;
+  background-color: white !important;
+  border: 2px solid #7FFFD4 !important;
+}
+
+.mat-square-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
+  border-radius: 4px !important;
+  background-color: white !important;
+  border: 2px dotted #343434 !important;
+}
+
+.mat-square-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
+  border-radius: 4px !important;
+  background-color: white !important;
+  border: 2px dotted #343434 !important;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:checked ~ .mdc-checkbox__ripple {
+  opacity: 0 !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__checkmark {
+  background: url("./imgs/done-white25.png") no-repeat center center;
+  color: transparent;
+}
+
+.mat-mdc-standard-chip.mdc-evolution-chip--with-primary-graphic .mdc-evolution-chip__action--primary {
+  padding: 0;
+}
+
+.mat-mdc-standard-chip .mdc-evolution-chip__cell--primary {
+  display: block;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__checkmark {
+  color: transparent !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+  font-size: 12px;
+}
+
+.mat-square-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background .mdc-checkbox__checkmark {
+  color: #F64D86 !important;
+}
+
+span.button-items-right .mat-mdc-raised-button.mat-mdc-button-base {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  padding: 0;
+}
+span.button-items-right .mat-mdc-raised-button.mat-mdc-button-base .mat-icon {
+  margin: 0;
+}/*# sourceMappingURL=list.component.css.map */
