@@ -1,0 +1,24 @@
+<section class="container center-section d-grid">
+  <div class="row align-self-center">
+
+    <div class="col align-self-center">
+      <mat-card>
+        <mat-card-content>
+          <section class="list-section-two">
+            <div class="container d-grid">
+              <div class="row d-grid todo-item" *ngFor="let todo of filteredItems()">
+                <span class="col p-0">
+                  <mat-checkbox color="accent" class="example-margin font-monospace"><span>{{todo.todoName}}</span></mat-checkbox>
+                </span>
+              </div>
+            </div>
+          </section>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col align-self-center">
+    </div>
+
+  </div>
+</section>

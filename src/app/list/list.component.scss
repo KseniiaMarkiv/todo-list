@@ -1,0 +1,36 @@
+@import '../settings/variables';
+
+.center-section {
+  height: 100svh;
+  div {
+    height: auto;
+    @media (max-width: 1900px) {
+      .todo-item {
+        margin-left: 100px;
+      }
+    }
+    @media (max-width: 1200px) {
+      .todo-item {
+        margin-left: 50px;
+      }
+    }
+    @media (max-width: 991px) {
+      .todo-item {
+        margin-left: 0px;
+      }
+    }
+    .list-section-two {
+      padding: 48px;
+    }
+    @media (max-width: 991px) {
+      .list-section-two {
+        padding: 28px;
+      }
+    }
+    @media (max-width: 768px) {
+      .list-section-two {
+        padding: 0px;
+      }
+    }
+  }
+}
