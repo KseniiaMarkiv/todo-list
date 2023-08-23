@@ -9,12 +9,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { Items } from "./item.model";
+import { ItemsComponent } from '../items/items.component';
 
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, MatCardModule,MatCheckboxModule, MatButtonModule, MatChipsModule, MatIconModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, MatCardModule, MatCheckboxModule, MatButtonModule, MatChipsModule, MatIconModule, FormsModule, ReactiveFormsModule, ItemsComponent],
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
   encapsulation: ViewEncapsulation.None
@@ -70,7 +71,6 @@ export class ListComponent {
     this.showMessage = false;
     this.messageText = '';
   }
-
 
   toggleInputField() {
     this.showInputField = !this.showInputField;

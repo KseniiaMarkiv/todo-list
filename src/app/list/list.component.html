@@ -52,7 +52,7 @@
           <img [src]="imagePath" class="img-fluid" alt="Sheet image for list of shoping items" width="480">
         </div>
         <div class="sheet-list position-absolute">
-          <dl class="lists m-0">
+          <!-- <dl class="lists m-0">
             <dd class="items" *ngFor="let todo of filteredItems()">
               <span class="button-items-right">
                 <button mat-raised-button color="accent" (click)="deleteTodo(todo)">
@@ -63,10 +63,14 @@
                 <span class="list-items-right position-relative">{{todo.todoName}}</span>
               </mat-checkbox>
             </dd>
-          </dl>
+          </dl> -->
+          <app-items class="lists m-0" *ngFor="let item of filteredItems()" [item]="item" (deleteItem)="deleteTodo($event)"></app-items>
+
         </div>
+
       </section>
     </div>
+
 
   </div>
 </section>

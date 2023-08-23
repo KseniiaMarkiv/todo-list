@@ -1,0 +1,10 @@
+<div class="items">
+  <span class="button-items-right">
+    <button mat-raised-button color="accent" aria-label="Delete" (click)="deleteItem.emit(item)">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
+  </span>
+  <mat-checkbox class="example-margin font-monospace mat-square-checkbox">
+    <span class="list-items-right position-relative">{{item.todoName}}</span>
+  </mat-checkbox>
+</div>
