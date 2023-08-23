@@ -4,7 +4,26 @@
       <mat-icon>delete_forever</mat-icon>
     </button>
   </span>
-  <mat-checkbox class="example-margin font-monospace mat-square-checkbox">
+  <span class="button-items-right ms-2">
+    <button mat-raised-button class="color-edit" aria-label="Edit" (click)="editable = !editable">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </span>
+  <mat-checkbox class="example-margin font-monospace mat-square-checkbox" (click)="selectTodo.emit(item)">
     <span class="list-items-right position-relative">{{item.todoName}}</span>
   </mat-checkbox>
+</div>
+
+<div class="alert-wrapper position-absolute" *ngIf="editable">
+  <div class="alert alert-edit-item pe-3" role="alert">
+    <input class="edit-todo-name"  
+      placeholder="Edit item"
+      [value]="item.todoName"
+      #editedItem
+      (keyup.enter)="saveItem(editedItem.value)">
+      <div class="buttons-place">
+      <button class="cancel-todo" mat-raised-button color="accent" (click)="editable = !editable">Cancel</button>
+      <button type="button" class="btn btn-info" data-bs-dismiss="alert" (click)="saveItem(editedItem.value)">Save</button>
+    </div>
+  </div>
 </div>

@@ -31,9 +31,9 @@ export class ListComponent {
   showInputField: boolean = false;
 
   allItems: Items[] = [
-    { todoName: "Grocery Shopping", filter: 'todo' },
+    { todoName: "Grocery Shopping", filter: 'all' },
     { todoName: "Work Tasks", filter: 'all' },
-    { todoName: "Home Improvement", filter: 'done' },
+    { todoName: "Home Improvement", filter: 'all' },
     { todoName: "Self-Care and Health", filter: 'all' },
   ];
   
@@ -46,18 +46,24 @@ export class ListComponent {
   }
   addTodo(newTodoName: string) {
     if (newTodoName.trim() !== '') {
-      const newItem: Items = { todoName: newTodoName, filter: 'all' && 'todo' };
-      this.allItems.push(newItem);
+      if (newTodoName.length > 38) {
+        this.showMessageForDuration("Todo name should be 38 characters or less.", 5000);
+      } else {
+        const newItem: Items = { todoName: newTodoName, filter: 'all' && 'todo' };
+        this.allItems.push(newItem);
+      }
     } else {
       this.showMessageForDuration("Todo name cannot be empty.", 5000); 
     }
   }
-  selectItem(item: Items) {
+  
+  selectItem(item: Items) {  
     const index = this.allItems.indexOf(item);
     if (index !== -1) {
       this.allItems[index].filter = 'done';
     }
   }
+
   deleteTodo(item: Items) {
     const index = this.allItems.indexOf(item);
     if (index !== -1) {

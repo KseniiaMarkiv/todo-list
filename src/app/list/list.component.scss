@@ -1,6 +1,11 @@
 @import '../settings/variables';
 @import '../settings/mixin';
 
+
+.errorMessage {
+  color: red;
+}
+
 .center-section {
   height: 80svh;
   div.row {
@@ -121,9 +126,9 @@
         }
         div.sheet-list {
           top: 88px;
-          left: 90px;
+          left: 55px;
           .lists {
-            .items {
+            div.items {
               margin: 0;
               height: 25px;
               span.list-items-right {
@@ -131,6 +136,7 @@
                 color: $secondary-text-color;
                 font-size: 16px;
                 top: 2px;
+                width: 255px;
               }
             }
           }

@@ -1,0 +1,35 @@
+@import '../settings/variables';
+@import '../settings/mixin';
+
+button.color-edit {
+  background-color: $primary-accent-color;
+  color: whitesmoke;
+}
+.alert-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 150px;
+  left: 5%;
+  .alert-edit-item {
+    background-color: rgba(245, 245, 245, 0.1);
+    @include blur-effect(5px);
+      border-radius: 4px;
+      width: 300px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 1px 1px 10px 1px rgba(52, 52, 52, 0.47);
+      input {
+        width: 100%;
+        padding: 6px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+  }
+}
