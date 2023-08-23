@@ -21,8 +21,8 @@
       [value]="item.todoName"
       #editedItem
       (keyup.enter)="saveItem(editedItem.value)">
-      <div class="buttons-place">
-      <button class="cancel-todo" mat-raised-button color="accent" (click)="editable = !editable">Cancel</button>
+      <div class="buttons-place mt-3">
+      <button class="cancel-todo me-3" mat-raised-button color="accent" (click)="editable = !editable">Cancel</button>
       <button type="button" class="btn btn-info" data-bs-dismiss="alert" (click)="saveItem(editedItem.value)">Save</button>
     </div>
   </div>
