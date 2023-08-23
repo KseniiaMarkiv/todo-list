@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
+[![](https://img.shields.io/badge/Click_me_&#10138;-brightgreen?style=for-the-badge)](https://github.com/KseniiaMarkiv/todo-list/tree/gh-pages)
+   *the link of source the code performed project*
+
+[![](https://img.shields.io/badge/Click_me_&#10138;-yellow?style=for-the-badge)](https://kseniiamarkiv.github.io/todo-list/)
+*the link to check the performed project online*
+
+_____________________________________________________________
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
