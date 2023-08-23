@@ -1,28 +1,15 @@
 # TodoList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Created a to-do list app based on Angular 16, Scss and Implemented desktop design.
 
-## Development server
+Application has abilities like:
+-	Display item list;
+-	Filtered items by 'all', 'todo' and 'done' actions;
+-	Capability to edit, save and delete items
+-	And a little bonus is the cute design 😉
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+------------------------------------------------------
 
-## Code scaffolding
+You can compare the design from Figma [![](https://img.shields.io/badge/Click_me_&#10138;-brightgreen?style=for-the-badge)]( https://www.figma.com/community/file/1271828665006307996)  and 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# todo-list" 
+the implemented code app [![](https://img.shields.io/badge/Click_me_&#10138;-yellow?style=for-the-badge)]( https://kseniiamarkiv.github.io/todo-list/)
