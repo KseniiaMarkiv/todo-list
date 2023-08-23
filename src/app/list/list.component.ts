@@ -24,6 +24,7 @@ export class ListComponent {
   imagePath = 'assets/sheet-stick.png';
 
   filter: "all" | "todo" | "done" = "all";
+
   newTodoName: string = '';
   showMessage: boolean = false;
   messageText: string = '';
@@ -45,14 +46,20 @@ export class ListComponent {
   }
   addTodo(newTodoName: string) {
     if (newTodoName.trim() !== '') {
-      const newItem: Items = { todoName: newTodoName, filter: 'all' };
+      const newItem: Items = { todoName: newTodoName, filter: 'all' && 'todo' };
       this.allItems.push(newItem);
     } else {
       this.showMessageForDuration("Todo name cannot be empty.", 5000); 
     }
   }
-  deleteTodo(todo: Items) {
-    const index = this.allItems.indexOf(todo);
+  selectItem(item: Items) {
+    const index = this.allItems.indexOf(item);
+    if (index !== -1) {
+      this.allItems[index].filter = 'done';
+    }
+  }
+  deleteTodo(item: Items) {
+    const index = this.allItems.indexOf(item);
     if (index !== -1) {
       this.allItems.splice(index, 1);
     }

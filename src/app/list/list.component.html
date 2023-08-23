@@ -14,8 +14,8 @@
         <mat-card-content>
           <section class="list-section-two">
             <div class="container d-grid">
-              <div class="row d-grid todo-item" *ngFor="let todo of allItems.slice(0, 4)"> <!-- show only 4 items -->
-                <span class="col p-0 input-items">
+              <div class="row d-grid todo-item" *ngFor="let todo of allItems.slice(0, 4)">
+                <span class="col p-0 input-items" (click)="selectItem(todo)">
                   <mat-checkbox color="accent" class="example-margin font-monospace">
                     <span class="list-items-left">{{todo.todoName}}</span>
                   </mat-checkbox>
@@ -52,20 +52,7 @@
           <img [src]="imagePath" class="img-fluid" alt="Sheet image for list of shoping items" width="480">
         </div>
         <div class="sheet-list position-absolute">
-          <!-- <dl class="lists m-0">
-            <dd class="items" *ngFor="let todo of filteredItems()">
-              <span class="button-items-right">
-                <button mat-raised-button color="accent" (click)="deleteTodo(todo)">
-                  <mat-icon>delete_forever</mat-icon>
-                </button>
-              </span>
-              <mat-checkbox class="example-margin font-monospace mat-square-checkbox">
-                <span class="list-items-right position-relative">{{todo.todoName}}</span>
-              </mat-checkbox>
-            </dd>
-          </dl> -->
-          <app-items class="lists m-0" *ngFor="let item of filteredItems()" [item]="item" (deleteItem)="deleteTodo($event)"></app-items>
-
+          <app-items class="lists m-0" *ngFor="let item of filteredItems()" [item]="item"  (click)="selectItem(item)" (deleteItem)="deleteTodo($event)"></app-items>
         </div>
 
       </section>
