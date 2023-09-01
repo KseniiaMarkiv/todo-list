@@ -17,21 +17,52 @@ import { Items } from "../list/item.model";
 export class ItemsComponent {
 
   editable = false;
+  showMessage: boolean = false;
+  messageText: string = '';
 
   @Input() item: Items;
+  @Input() itemsList!: Items[];
   @Output() deleteItem = new EventEmitter<Items>();
   @Output() selectTodo = new EventEmitter<Items>();
+  
+  showMessageForDuration(message: string, duration: number) {
+    this.showMessage = true;
+    this.messageText = message;
+
+    setTimeout(() => {
+      this.closeMessage();
+    }, duration);
+  }
+  closeMessage() {
+    this.showMessage = false;
+    this.messageText = '';
+  }
 
   constructor() {
-    this.item = {} as Items; // Initialize with an empty object or an appropriate default value
-  } // or do @Input() item!: Item;
+    this.item = {} as Items; 
+  } 
 
-  saveItem(todoName: string) {
-    if (!todoName) return;
-    this.editable = false;
-    const newItem: Items = { ...this.item, todoName }; // Create a new object with the updated todoName
-    this.item = newItem;
+  saveItem(newTodoName: string, indexToUpdate: number) {
+    if (!newTodoName || newTodoName.trim() === '') {
+      this.showMessageForDuration("Todo name cannot be empty.", 5000);
+      return;
+    }
+
+    if (newTodoName.length > 38) {
+      this.showMessageForDuration("Todo name should be 38 characters or less.", 5000);
+      return;
+    }
+
+    if (indexToUpdate >= 0 && indexToUpdate < this.itemsList.length) {
+      this.itemsList[indexToUpdate].todoName = newTodoName;
+      this.editable = false;
+    } else {
+      console.error("Invalid indexToUpdate.");
+    }
   }
- 
+
+  deleteTodo() {
+    this.deleteItem.emit(this.item);
+  }
 
 }

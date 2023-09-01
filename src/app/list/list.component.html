@@ -3,7 +3,7 @@
 
     <div class="col-5 align-self-center pt-5 mt-5">
       <div class="text-decoration-underline fs-3 top-items text-center" *ngIf="allItems.length > 0">
-        {{allItems.length }} items left
+        {{getLenghtItems().length }} items left
       </div>
   
       <div class="title-todo p-2 mt-5 mb-3 top-items text-center">
@@ -14,7 +14,7 @@
         <mat-card-content>
           <section class="list-section-two">
             <div class="container d-grid">
-              <div class="row d-grid todo-item" *ngFor="let todo of allItems.slice(0, 4)">
+              <div class="row d-grid todo-item" *ngFor="let todo of getDisplayedFilteredItems()">
                 <span class="col p-0 input-items" (click)="selectItem(todo)">
                   <mat-checkbox color="accent" class="example-margin font-monospace">
                     <span class="list-items-left">{{todo.todoName}}</span>
@@ -24,8 +24,8 @@
             </div>
           </section>
 
-          <section class="list-section-new position-relative">
-            <button class="new-todo position-absolute" mat-raised-button (click)="toggleInputField()">+ New Task</button>
+          <section class="list-section-new">
+            <button class="new-todo" mat-raised-button (click)="toggleInputField()">+ New Task</button>
             <div class="alert-wrapper position-absolute" *ngIf="showInputField">
               <div class="alert alert-dismissible fade show alert-new-item pe-3" role="alert">
                 <input class="new-todo-name" [(ngModel)]="newTodoName" placeholder="Enter new todo name">
@@ -52,7 +52,7 @@
           <img [src]="imagePath" class="img-fluid" alt="Sheet image for list of shoping items" width="480">
         </div>
         <div class="sheet-list position-absolute">
-          <app-items class="lists m-0" *ngFor="let item of filteredItems()" [item]="item"  (selectTodo)="selectItem($event)" (deleteItem)="deleteTodo($event)"></app-items>
+          <app-items class="lists m-0" *ngFor="let item of filteredItems()" [item]="item" [itemsList]="allItems" (selectTodo)="selectItem($event)" (deleteItem)="deleteTodo($event)"></app-items>
         </div>
 
       </section>

@@ -59,53 +59,72 @@
           border: none;
           border-bottom: 1px solid grey;
         }
-      }
-      .new-todo {
-        border-radius: 40px;
-        background-color: $primary-accent-color;
-        color: $primary-text-color;
-        font-size: 13px;
-        padding: 0 25px;
-        right: 35%;
-        bottom: -70px;
-      }
-      .alert-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: -40%;
-        left: 10%;
-        .alert-new-item {
-          background-color: rgba(245, 245, 245, 0.6);
-          @include blur-effect(5px);
-          border-radius: 4px;
-          width: 300px;
-          height: 200px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          box-shadow: 1px 1px 10px 1px #34343478;
-          .add-todo {
+        mat-card-content, .list-section-two, .list-section-new  {
+          width: inherit;
+          height: inherit;
+          top: 0;
+          left: 0;
+        }
+        .list-section-two, .list-section-new  {
+          position: absolute;
+        }
+        .list-section-two {
+          z-index: 2;
+        }
+        .list-section-new {
+          width: 400px;
+          height: 324px;
+          .new-todo {
+            border-radius: 40px;
             background-color: $primary-accent-color;
             color: $primary-text-color;
+            font-size: 13px;
+            padding: 0 25px;
+            left: 335px;
+            bottom: 155px;
+            position: fixed;
           }
-          .btn-close {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-          }
-          input {
-            width: 100%;
-            padding: 6px 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-          }
-          input::placeholder {
-            color: gray;
+          .alert-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            .alert-new-item {
+              background-color: rgba(245, 245, 245, 0.6);
+              @include blur-effect(5px);
+              border-radius: 4px;
+              width: 300px;
+              height: 200px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              box-shadow: 1px 1px 10px 1px #34343478;
+              .add-todo {
+                background-color: $primary-accent-color;
+                color: $primary-text-color;
+              }
+              .btn-close {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+              }
+              input {
+                width: 100%;
+                padding: 6px 10px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
+              input::placeholder {
+                color: gray;
+              }
+            }
           }
         }
       }
@@ -183,7 +202,6 @@
 .mat-mdc-checkbox-checked .mdc-form-field .mdc-label .list-items-right {
   text-decoration: line-through;
 }
-
 .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
   border-radius: 50% !important;
   background-color: white !important;

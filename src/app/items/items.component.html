@@ -20,10 +20,11 @@
       placeholder="Edit item"
       [value]="item.todoName"
       #editedItem
-      (keyup.enter)="saveItem(editedItem.value)">
+      (keyup.enter)="saveItem(editedItem.value, itemsList.indexOf(item))">
       <div class="buttons-place mt-3">
       <button class="cancel-todo me-3" mat-raised-button color="accent" (click)="editable = !editable">Cancel</button>
-      <button type="button" class="btn btn-info" data-bs-dismiss="alert" (click)="saveItem(editedItem.value)">Save</button>
+      <button type="button" class="btn btn-info" data-bs-dismiss="alert" (click)="saveItem(editedItem.value, itemsList.indexOf(item))">Save</button>
     </div>
   </div>
 </div>
+

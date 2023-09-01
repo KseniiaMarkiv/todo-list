@@ -5,6 +5,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 
 
@@ -31,12 +32,20 @@ export class ListComponent {
   showInputField: boolean = false;
 
   allItems: Items[] = [
-    { todoName: "Grocery Shopping", filter: 'all' },
-    { todoName: "Work Tasks", filter: 'all' },
-    { todoName: "Home Improvement", filter: 'all' },
-    { todoName: "Self-Care and Health", filter: 'all' },
+    { todoName: "Grocery Shopping", filter: 'all' && 'todo' },
+    { todoName: "Work Tasks", filter: 'all' && 'todo' },
+    { todoName: "Home Improvement", filter: 'all' && 'todo' },
+    { todoName: "Self-Care and Health", filter: 'all' && 'todo' },
   ];
-  
+  maxItemsToShow = 4; 
+
+  getDisplayedFilteredItems(): Items[] {
+    return this.allItems.filter(item => item.filter === 'todo').slice(0, this.maxItemsToShow);
+  }
+  getLenghtItems(): Items[] {
+    return this.allItems.filter(item => item.filter === 'todo');
+  }
+
   filteredItems(): Items[] {
     if (this.filter === 'all') {
       return this.allItems;
@@ -71,13 +80,15 @@ export class ListComponent {
     }
   }
 
-  showMessageForDuration(message: string, duration: number) {
+  showMessageForDuration(message: string, duration?: number) {
     this.showMessage = true;
     this.messageText = message;
 
-    setTimeout(() => {
-      this.closeMessage();
-    }, duration);
+    if (duration !== undefined) {
+      setTimeout(() => {
+        this.closeMessage();
+      }, duration);
+    }
   }
 
   closeMessage() {
