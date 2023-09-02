@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 
 import { Items } from "./item.model";
@@ -13,7 +13,12 @@ import { ItemsComponent } from '../items/items.component';
 })
 export class ListComponent {
   imagePath = 'assets/sheet-stick.png';
+
   constructor(public dialog: MatDialog) {}
+
+  @Output() showMessageEvent = new EventEmitter<string>();
+  @Output() closeMessageEvent = new EventEmitter<void>();
+
   filter: "all" | "todo" | "done" = "todo";
 
   newTodoName: string = '';

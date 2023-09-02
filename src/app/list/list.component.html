@@ -53,7 +53,14 @@
           <img [src]="imagePath" class="img-fluid" alt="Sheet image for list of shoping items" width="480">
         </div>
         <div class="sheet-list position-absolute">
-          <app-items class="lists m-0" *ngFor="let item of filteredItems()" [item]="item" [itemsList]="allItems" (selectTodo)="selectItem($event)" (deleteItem)="deleteTodo($event)"></app-items>
+          <app-items class="lists m-0" 
+                    *ngFor="let item of filteredItems()" 
+                    [item]="item" [itemsList]="allItems" 
+                    (selectTodo)="selectItem($event)" 
+                    (deleteItem)="deleteTodo($event)"
+                    (showMessageForDurationEvent)="showMessageForDuration($event.message, $event.duration)"
+                    (closeMessageEvent)="closeMessage()">
+          </app-items>
         </div>
 
       </section>

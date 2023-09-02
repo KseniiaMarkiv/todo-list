@@ -17,28 +17,18 @@ export class ItemsComponent {
   @Input() itemsList!: Items[];
   @Output() deleteItem = new EventEmitter<Items>();
   @Output() selectTodo = new EventEmitter<Items>();
+  @Output() showMessageForDurationEvent = new EventEmitter<{ message: string, duration?: number }>();
+  @Output() closeMessageEvent = new EventEmitter<void>();
 
-  showMessageForDuration(message: string, duration: number) {
-    this.showMessage = true;
-    this.messageText = message;
-
-    setTimeout(() => {
-      this.closeMessage();
-    }, duration);
-  }
-  closeMessage() {
-    this.showMessage = false;
-    this.messageText = '';
-  }
 
   saveItem(newTodoName: string, indexToUpdate: number) {
     if (!newTodoName || newTodoName.trim() === '') {
-      this.showMessageForDuration("Todo name cannot be empty.", 5000);
+      this.showMessageForDurationEvent.emit({message: "Todo name cannot be empty.", duration: 5000});
       return;
     }
 
     if (newTodoName.length > 38) {
-      this.showMessageForDuration("Todo name should be 38 characters or less.", 5000);
+      this.showMessageForDurationEvent.emit({ message: "Todo name should be 38 characters or less.", duration: 5000});
       return;
     }
 
