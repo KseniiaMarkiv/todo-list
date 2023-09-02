@@ -1,13 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {MatCardModule} from '@angular/material/card';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatButtonModule} from '@angular/material/button';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-
+import {MatDialog} from '@angular/material/dialog';
 
 import { Items } from "./item.model";
 import { ItemsComponent } from '../items/items.component';
@@ -15,16 +7,14 @@ import { ItemsComponent } from '../items/items.component';
 
 @Component({
   selector: 'app-list',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatCheckboxModule, MatButtonModule, MatChipsModule, MatIconModule, FormsModule, ReactiveFormsModule, ItemsComponent],
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class ListComponent {
   imagePath = 'assets/sheet-stick.png';
-
-  filter: "all" | "todo" | "done" = "all";
+  constructor(public dialog: MatDialog) {}
+  filter: "all" | "todo" | "done" = "todo";
 
   newTodoName: string = '';
   showMessage: boolean = false;
@@ -40,7 +30,11 @@ export class ListComponent {
   maxItemsToShow = 4; 
 
   getDisplayedFilteredItems(): Items[] {
-    return this.allItems.filter(item => item.filter === 'todo').slice(0, this.maxItemsToShow);
+    if (this.filter === 'all') {
+      return this.allItems.slice(0, this.maxItemsToShow);
+    } else {
+      return this.allItems.filter(item => item.filter === this.filter).slice(0, this.maxItemsToShow);
+    }
   }
   getLenghtItems(): Items[] {
     return this.allItems.filter(item => item.filter === 'todo');
@@ -69,7 +63,19 @@ export class ListComponent {
   selectItem(item: Items) {  
     const index = this.allItems.indexOf(item);
     if (index !== -1) {
-      this.allItems[index].filter = 'done';
+      if (this.filter === 'all' || this.filter === 'done') {
+        const dialogRef = this.dialog.open(DialogContentExampleDialog, {
+          width: '450px',
+        });
+  
+        dialogRef.afterClosed().subscribe(result => {
+          if (result === true) {
+            this.deleteTodo(item);
+          }
+        });
+      } else {
+        this.allItems[index].filter = 'done';
+      }
     }
   }
 
@@ -103,3 +109,9 @@ export class ListComponent {
     }
   }
 }
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: './dialog-content-example-dialog.html',
+})
+export class DialogContentExampleDialog {}
+

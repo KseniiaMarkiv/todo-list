@@ -52,8 +52,22 @@
             padding: 0px;
           }
         }
-        span.list-items-left {
+        .list-items {
+          display: flex;
+          flex-wrap: nowrap;
+          span.chip {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            width: 17px;
+            height: 17px;
+            border-radius: 50% !important;
+            background-color: $primary-accent-color !important;
+            border: 2px solid $primary-bg-color !important;
+          }
+          span.list-items-left {
           font-family: 'Inder', sans-serif;
+            }
         }
         input.new-todo-name {
           border: none;
@@ -148,16 +162,23 @@
           left: 55px;
           .lists {
             div.items {
+              height: 27px;
+              div.item {
               margin: 0;
-              height: 25px;
+              height: 26px;
+              display: flex;
+              align-items: center;
+              flex-wrap: nowrap;
+              flex-direction: row;
               span.list-items-right {
                 font-family: 'Handlee', cursive;
                 color: $secondary-text-color;
                 font-size: 16px;
-                top: 2px;
                 width: 255px;
+                top: 3px;
               }
             }
+          }
           }
         }
         div.sheet {
@@ -195,28 +216,14 @@
 
 .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
   border-radius: 50%;
-  background-color: $primary-accent-color !important;
-  border: 2px solid $primary-bg-color !important;
-}
-.mat-mdc-checkbox-checked .mdc-form-field .mdc-label .list-items-left,
-.mat-mdc-checkbox-checked .mdc-form-field .mdc-label .list-items-right {
-  text-decoration: line-through;
-}
-.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
-  border-radius: 50% !important;
-  background-color: white !important;
+  background-color: $primary-bg-color !important;
   border: 2px solid $primary-accent-color !important;
 }
 
-.mat-square-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
-  border-radius: 4px !important;
-  background-color: white !important;
-  border: 2px dotted $primary-text-color !important;
-}
-.mat-square-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
-  border-radius: 4px !important;
-  background-color: white !important;
-  border: 2px dotted $primary-text-color !important;
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+  border-radius: 50% !important;
+  background-color: $primary-accent-color !important;
+  border: 2px solid $primary-bg-color !important;
 }
 
 .mdc-checkbox .mdc-checkbox__native-control:checked~.mdc-checkbox__ripple {

@@ -15,10 +15,11 @@
           <section class="list-section-two">
             <div class="container d-grid">
               <div class="row d-grid todo-item" *ngFor="let todo of getDisplayedFilteredItems()">
-                <span class="col p-0 input-items" (click)="selectItem(todo)">
-                  <mat-checkbox color="accent" class="example-margin font-monospace">
+                  <span class="col p-0 input-items" (click)="selectItem(todo)">
+                  <div class="list-items mt-3">
+                    <span class="chip me-3"></span>
                     <span class="list-items-left">{{todo.todoName}}</span>
-                  </mat-checkbox>
+                  </div>
                 </span>
               </div>
             </div>
@@ -42,8 +43,8 @@
     <div class="col-7 d-flex justify-content-start flex-column">
       <section class="chips-section mt-5 mb-3">
         <mat-chip-listbox aria-label="Items selection" class="text-center">
-          <mat-chip-option color="accent" class="text-center" (click)="filter = 'all'" selected>ALL</mat-chip-option>
-          <mat-chip-option color="accent" class="text-center" (click)="filter = 'todo'">TODO</mat-chip-option>
+          <mat-chip-option color="accent" class="text-center" (click)="filter = 'all'">ALL</mat-chip-option>
+          <mat-chip-option color="accent" class="text-center" (click)="filter = 'todo'" selected>TODO</mat-chip-option>
           <mat-chip-option color="accent" class="text-center" (click)="filter = 'done'">DONE</mat-chip-option>
         </mat-chip-listbox>
       </section>

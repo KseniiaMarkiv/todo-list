@@ -1,16 +1,9 @@
 import { Component, Input, EventEmitter, Output  } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
 
 import { Items } from "../list/item.model";
 
 @Component({
   selector: 'app-items',
-  standalone: true,
-  imports: [CommonModule, MatCheckboxModule, MatIconModule, MatButtonModule],
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss']
 })
@@ -20,11 +13,11 @@ export class ItemsComponent {
   showMessage: boolean = false;
   messageText: string = '';
 
-  @Input() item: Items;
+  @Input() item!: Items;
   @Input() itemsList!: Items[];
   @Output() deleteItem = new EventEmitter<Items>();
   @Output() selectTodo = new EventEmitter<Items>();
-  
+
   showMessageForDuration(message: string, duration: number) {
     this.showMessage = true;
     this.messageText = message;
@@ -37,10 +30,6 @@ export class ItemsComponent {
     this.showMessage = false;
     this.messageText = '';
   }
-
-  constructor() {
-    this.item = {} as Items; 
-  } 
 
   saveItem(newTodoName: string, indexToUpdate: number) {
     if (!newTodoName || newTodoName.trim() === '') {

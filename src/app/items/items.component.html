@@ -1,19 +1,18 @@
-<div class="items">
-  <span class="button-items-right">
-    <button mat-raised-button color="accent" aria-label="Delete" (click)="deleteItem.emit(item)">
-      <mat-icon>delete_forever</mat-icon>
-    </button>
-  </span>
-  <span class="button-items-right ms-2">
-    <button mat-raised-button class="color-edit" aria-label="Edit" (click)="editable = !editable">
-      <mat-icon>edit</mat-icon>
-    </button>
-  </span>
-  <mat-checkbox class="example-margin font-monospace mat-square-checkbox" (click)="selectTodo.emit(item)">
-    <span class="list-items-right position-relative">{{item.todoName}}</span>
-  </mat-checkbox>
+<div class="items ms-1">
+  <div class="item">
+    <span class="button-items-right">
+        <button mat-raised-button color="accent" aria-label="Delete" (click)="deleteItem.emit(item)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </span>
+    <span class="button-items-right ms-2">
+      <button mat-raised-button class="color-edit" aria-label="Edit" (click)="editable = !editable">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </span>
+    <span class="list-items-right position-relative ms-3" (click)="selectTodo.emit(item)">{{item.todoName}}</span>
+  </div>
 </div>
-
 <div class="alert-wrapper position-absolute" *ngIf="editable">
   <div class="alert alert-edit-item pe-3" role="alert">
     <input class="edit-todo-name"  
