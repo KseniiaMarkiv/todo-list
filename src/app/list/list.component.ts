@@ -54,8 +54,8 @@ export class ListComponent {
   }
   addTodo(newTodoName: string) {
     if (newTodoName.trim() !== '') {
-      if (newTodoName.length > 38) {
-        this.showMessageForDuration("Todo name should be 38 characters or less.", 5000);
+      if (newTodoName.length > 33) {
+        this.showMessageForDuration("Todo name should be 33 characters or less.", 5000);
       } else {
         const newItem: Items = { todoName: newTodoName, filter: 'all' && 'todo' };
         this.allItems.push(newItem);

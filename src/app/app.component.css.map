@@ -1,1 +1,0 @@
-{"version":3,"sources":["app.component.scss","app.component.css","settings/_variables.scss"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,YAAA;ACDF;ADEE;EACE,yBAAA;ACAJ;ADCI;EACE,YAAA;ACCN;ADCI;EACI,WAAA;ACCR;ADCI;EACE,iBEXW;ADYjB;;ADIA;EACE,cAAA;ACDF;;ADIA;EACE,aAAA;EACA,cAAA;EACA,yBErBiB;ADoBnB","file":"app.component.css"}

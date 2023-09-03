@@ -67,6 +67,7 @@
           }
           span.list-items-left {
           font-family: 'Inder', sans-serif;
+          cursor: pointer;
             }
         }
         input.new-todo-name {
@@ -86,7 +87,9 @@
           z-index: 2;
         }
         .list-section-new {
-          width: 400px;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 400px;
           height: 324px;
           .new-todo {
             border-radius: 40px;
@@ -94,9 +97,12 @@
             color: $primary-text-color;
             font-size: 13px;
             padding: 0 25px;
-            left: 335px;
-            bottom: 155px;
-            position: fixed;
+            // centering of button in bottom 
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15px;
+            z-index: 6;
           }
           .alert-wrapper {
             display: flex;
@@ -107,7 +113,7 @@
             transform: translate(-50%, -50%);
             z-index: 5;
             .alert-new-item {
-              background-color: rgba(245, 245, 245, 0.6);
+              background-color: rgba(245, 245, 245, 0.232);
               @include blur-effect(5px);
               border-radius: 4px;
               width: 300px;
@@ -117,6 +123,9 @@
               justify-content: center;
               flex-direction: column;
               box-shadow: 1px 1px 10px 1px #34343478;
+              @-moz-document url-prefix() {
+                background-color: rgba(245, 245, 245, 0.9) !important;
+              }
               .add-todo {
                 background-color: $primary-accent-color;
                 color: $primary-text-color;
@@ -139,6 +148,7 @@
                 color: gray;
               }
             }
+            
           }
         }
       }
@@ -174,8 +184,9 @@
                 font-family: 'Handlee', cursive;
                 color: $secondary-text-color;
                 font-size: 16px;
-                width: 255px;
+                width: auto;
                 top: 3px;
+                cursor: pointer;
               }
             }
           }
@@ -194,8 +205,8 @@
   left: 0%;
   font-size: x-large;
   letter-spacing: 2px;
-  background: #7fffd471;
-  z-index: 2;
+  background: rgba(128, 255, 212, 0.443);
+  z-index: 90;
   height: 100%;
   width: 100%;
   color: $primary-text-color;
@@ -204,6 +215,10 @@
   align-items: center;
 
   @include blur-effect(5px);
+
+  @-moz-document url-prefix() {
+    background: rgba(128, 255, 212, 0.8);
+  }
 }
 
 .alert-dismissible .btn-close {
