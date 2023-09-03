@@ -4,3 +4,15 @@
   -moz-backdrop-filter: blur($amount);
   -o-backdrop-filter: blur($amount);
 }
+
+// Media queries
+
+@mixin for-tablet-landscale {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin for-tablet-portrait {
+  @media (max-width: 900px) { @content; }
+}
+@mixin for-phone {
+  @media (max-width: 600px) { @content; }
+}

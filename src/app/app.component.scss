@@ -1,28 +1,27 @@
 @import './settings/variables';
 
-nav {
-  width: 100svw;
-  height: auto;
-  mat-toolbar {
-    background-color: #7FFFD4;
-    .white-icon {
-      color: white;
-  }
-    .white-icon svg {
-        fill: white;
-    }
-    span.primary-text-color {
-      color: $nav-text-color;
-    }
-  }
-}
+// nav {
+//   width: 100svw;
+//   height: auto;
+//   mat-toolbar {
+//     background-color: #7FFFD4;
+//     .white-icon {
+//       color: white;
+//   }
+//     .white-icon svg {
+//         fill: white;
+//     }
+//     span.primary-text-color {
+//       color: $nav-text-color;
+//     }
+//   }
+// }
 
-.example-spacer {
-  flex: 1 1 auto;
-}
+// .example-spacer {
+//   flex: 1 1 auto;
+// }
 
 main {
   width: 100svw;
   height: 100svh;
-  background-color: $primary-bg-color;
 }

@@ -7,16 +7,20 @@
 }
 
 .center-section {
-  height: 80svh;
+  height: 100svh;
   div.row {
     height: 100%;
-    div.col-5 {
+    div.col-xl-5 {
+      height: 600px;
+    }
+    div.col-xl-5, div.col-12 {
       .top-items {
         width: 400px;
         }
       .top-items:nth-child(2) {
         background-color: $primary-accent-color;
         border-radius: 4px;
+        height: 55px;
         p {
           padding: 10px;
         }
@@ -41,16 +45,6 @@
         }
         .list-section-two {
           padding: 48px;
-        }
-        @media (max-width: 991px) {
-          .list-section-two {
-            padding: 28px;
-          }
-        }
-        @media (max-width: 768px) {
-          .list-section-two {
-            padding: 0px;
-          }
         }
         .list-items {
           display: flex;
@@ -89,17 +83,18 @@
         .list-section-new {
           margin: 0 auto;
           width: 100%;
-          max-width: 400px;
+          max-width: 300px;
           height: 324px;
           .new-todo {
             border-radius: 40px;
             background-color: $primary-accent-color;
             color: $primary-text-color;
             font-size: 13px;
+            width: 150px;
             padding: 0 25px;
             // centering of button in bottom 
             position: absolute;
-            left: 50%;
+            left: 65%;
             transform: translateX(-50%);
             bottom: -15px;
             z-index: 6;
@@ -109,7 +104,7 @@
             align-items: center;
             justify-content: center;
             top: 50%;
-            left: 50%;
+            left: 65%;
             transform: translate(-50%, -50%);
             z-index: 5;
             .alert-new-item {
@@ -154,18 +149,25 @@
       }
       
     }
-   
-    div.col-7 {
+    div.col-xl-7 {
+      height: 800px;
+    }
+    div.col-xl-7 > div.col-12 {
+      height: 800px;
+    }
+    div.col-xl-7, div.col-12 {
       section.chips-section {
-        margin-left: 70px;
+        width: 490px;
         mat-chip-option {
           width: 100px;
           height: 25px;
         }
       }
       section.list-section {
+        height: 800px;
+        width: 490px;
         div.sheet-list, div.sheet {
-          width: 100%;
+          width: 490px;
         }
         div.sheet-list {
           top: 88px;

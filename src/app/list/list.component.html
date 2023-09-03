@@ -1,7 +1,7 @@
 <section class="container center-section">
-  <div class="row ms-5 mb-5 ps-5">
+  <div class="row ms-5 mb-5 ps-5 align-items-center">
 
-    <div class="col-5 align-self-center pt-5 mt-5">
+    <div class="col-xl-5 col-12 d-grid justify-content-center pt-5 mt-5">
       <div class="text-decoration-underline fs-3 top-items text-center" *ngIf="allItems.length > 0">
         {{getLenghtItems().length }} items left
       </div>
@@ -40,13 +40,15 @@
       </mat-card>
     </div>
 
-    <div class="col-7 d-flex justify-content-start flex-column">
-      <section class="chips-section mt-5 mb-3">
-        <mat-chip-listbox aria-label="Items selection" class="text-center">
-          <mat-chip-option color="accent" class="text-center" (click)="filter = 'all'">ALL</mat-chip-option>
-          <mat-chip-option color="accent" class="text-center" (click)="filter = 'todo'" selected>TODO</mat-chip-option>
-          <mat-chip-option color="accent" class="text-center" (click)="filter = 'done'">DONE</mat-chip-option>
-        </mat-chip-listbox>
+    <div class="col-xl-7 col-12 justify-content-start d-flex flex-column align-items-center">
+      <section class="chips-section mt-5 mb-1 d-flex flex-column align-items-center">
+        <div>
+          <mat-chip-listbox aria-label="Items selection" class="text-center">
+            <mat-chip-option color="accent" class="text-center" (click)="filter = 'all'">ALL</mat-chip-option>
+            <mat-chip-option color="accent" class="text-center" (click)="filter = 'todo'" selected>TODO</mat-chip-option>
+            <mat-chip-option color="accent" class="text-center" (click)="filter = 'done'">DONE</mat-chip-option>
+          </mat-chip-listbox>
+        </div>
       </section>
       <section class="list-section position-relative">
         <div class="sheet position-absolute">
