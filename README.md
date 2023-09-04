@@ -1,8 +1,7 @@
 # TodoList
-*the link to project online*
-[![](https://img.shields.io/badge/Click_me_&#10138;-yellow?style=for-the-badge)](https://kseniiamarkiv.github.io/todo-list/)
+*the link to project online* 
+[![](https://img.shields.io/badge/Click_me_&#10138;-%2338DCCB?style=for-the-badge)](https://kseniiamarkiv.github.io/todo-list/)
 
---------------------------------
 ### technologies and their versions
 - [Angular CLI](https://github.com/angular/angular-cli) 16.2.0;
 - Bootstrap 5.2;
@@ -10,6 +9,13 @@
 - Sass preprocessor;
 - meta & OGP tags;
 - Deploy by angular-cli-ghpages;
+
+# $$\mathbb{\color{#38DCCB} How \ to \ interact \ with \ the \ Todo \ list}$$
+> - By default app opens on "todo" filter, so shows also 2 lists (left and right) by "todo" filter.
+> - If you click on an item, you move the item to "done" filter. There are present validations "Todo name cannot be empty", and "Todo name should be 33 characters or less." 
+> - If you go to "all" or "done" filters, by pressing on the item you get a message about "Do you wanna delete this item?" "Yes" or "No"
+> - You can add new elements by pressing the button "+ New Task". There are also present validations "Todo name cannot be empty", and "Todo name should be 33 characters or less." 
+> - You can in all filters position use delete and edit functions.
 
 
 ## a Todo list has abilities like
