@@ -1,5 +1,8 @@
 # TodoList
+*the link to project online*
+[![](https://img.shields.io/badge/Click_me_&#10138;-yellow?style=for-the-badge)](https://kseniiamarkiv.github.io/todo-list/)
 
+--------------------------------
 ### technologies and their versions
 - [Angular CLI](https://github.com/angular/angular-cli) 16.2.0;
 - Bootstrap 5.2;
